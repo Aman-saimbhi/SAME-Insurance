@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+     <title>DEEP FAKE DETECTION</title>
+
+</head>
+  <body>
+
+    <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <div class="container">
+      <div class="container" style="align:centre;">
+        <h1 class="text-white" >Deep Dialectical</h1>
+
+      </div>
+      <div class="row">
+
+        <div class="container"  style="height:50px;" >
+
+        </div>
+        </div>
+      <div class="row m5">
+        <div class="col-sm" >
+
+        </div>
+        <div class="col-sm">
+          <!-- Deep Fake -->
+          <input id="video-selector" type="file" class="mx-md-5 text-white">
+          <div class="container" style="height:5px;">
+
+          </div>
+          <button type="button" id="predict-button" data-toggle="button" aria-pressed="true" class="btn btn-danger mx-md-5">Predict</button>
+          <!-- <div class="spinner-border text-secondary" role="status">
+           <span class="sr-only">Loading...</span>
+         </div> -->
+         <div class="loader">
+            <img src="alert.gif" alt="">
+         </div>
+          <video id="selected-video" height=500 width=500 controls autoplay loop>
+             <source src="" type="video/mp4">
+           </video>
+         </div>
+
+
+        <div class="col-sm">
+          <p class="text-white">Deep_Fake: <span id="deep-fake-prediction"></span></p>
+          <p class="text-white">Not_Deep_Fake: <span id="not-deep-fake-prediction"></span></p>
+
+        </div>
+          <img id="test_visual"src="">
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      let base64Image;
+      $("#video-selector").change(function() {
+      let reader = new FileReader();
+      reader.onload = function(e) {
+      let dataURL = reader.result;
+      $("#selected-video").attr("src", dataURL);
+      base64Image = dataURL.replace("data:video/mp4;base64,","");
+      console.log(base64Image) ;
+      }
+         reader.readAsDataURL($("#video-selector")[0].files[0]);
+         $("#deep-fake-prediction").text("");
+         $("#not-deep-fake-prediction").text("");
+      });
+
+
+      $("#predict-button").click(function(event){
+          // $(".spinner-border").css({"display": "inline-block"});
+          $(".loader img").css({"display": "inline-block"});
+          $("#selected-video").css({"filter": "blur(4px)"});
+          // $("#selected-video").append($(".spinner-border"));
+          $(".result").text("");
+          $(".loading-icon").removeClass("hide");
+          $(".button").attr("disabled", true);
+          $(".btn-txt").text("Fetching Data From Server...");
+
+        let message = {
+               video: base64Image
+            }
+        console.log(message);
+        //192.168.1.4.    wifi-gurmeet458
+        $.post(" http://10.18.230.16:5000/visualizations", JSON.stringify(message), function(response){
+        //$.post("http://192.168.29.27:5000/predict", JSON.stringify(message), function(response){
+        //$.post("http://192.168.0.102:5000/predict", JSON.stringify(message), function(response){
+        // $.post("http://192.168.43.205:5000/predict", JSON.stringify(message), function(response){
+        // $(".spinner-border").css({"display": "none"});
+        //$(".loader img").css({"display": "none"});
+        //$("#selected-video").css({"filter": "blur(0px)"});
+        //$("#deep-fake-prediction").text(response.prediction.Deep_fake.toFixed(6));
+        //$("#not-deep-fake-prediction").text(response.prediction.Not_Deep_Fake.toFixed(6));
+        $("#test_visual").attr("src", "data:image/jpeg;base64,"+response.Visualization);
+        $("#test_visual").show();
+        console.log(response);
+        console.log(JSON.stringify(message));
+      });
+    });
+
+
+
+    </script>
+    <style>
+       * {
+           font-size: 20px;
+      }
+      body {
+           background-color: #1E2025
+           }
+       .text-white{
+         text-align: center;
+       }
+
+       /* .spinner-border{
+         display: none;
+         top : 280px;
+         left : 200px;
+         position: absolute;
+         z-index: 50000;
+         height: 5rem;
+         width: 5rem;
+       } */
+
+       #selected-video{
+         margin-top: 10px;
+      }
+      .loader img{
+              height: 130px;
+              width: 130px;
+              display: none;
+              top : 260px;
+              left : 190px;
+              position: absolute;
+              z-index: 5000000;
+            }
+
+    </style>
+
+
+
+  </body>
+</html>

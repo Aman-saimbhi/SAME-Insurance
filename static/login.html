@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"/>
+    
+  <script src="jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.1/select2.css" />
+  <link rel=" stylesheet" href="css/main.css" />
+  <title>Login Form</title>
+</head>
+
+<body>
+
+  <body class="login">
+    <div class="menu-toggler sidebar-toggler">
+    </div>
+    <div class="content">
+      <div class="tabbable-custom nav-justified">
+        <ul class="nav nav-tabs nav-justified log">
+          <li class="active">
+            <a class="login-tab" href="#login" data-toggle="tab" aria-expanded="true">
+              Login</a>
+          </li>
+          <li class="">
+            <a class="login-tab" href="#register" data-toggle="tab" aria-expanded="false">
+              Register</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="login">
+            <form class="" action="#" method="post">
+              <div class="form-group">
+
+                <div class="input-icon">
+                  <i class="fa fa-user"></i>
+                  <input class="form-control placeholder-no-fix" type="text" autocomplete="off"
+                    placeholder="Enter Email" name="email">
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="input-icon">
+                  <i class="fa fa-lock"></i>
+                  <input class="form-control placeholder-no-fix" type="password" autocomplete="off"
+                    placeholder="Password" name="password">
+                </div>
+              </div>
+              <div class="form-actions" style="padding-bottom:0px">
+                <label class="checkbox">
+                  <input type="checkbox" name="remember" value="1"> Remember me </label>
+                <button type="submit" class="btn blue pull-right">
+                  Login <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+              </div>
+              <div class="login-options">
+                <h4>or login with</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <!-- <a class="btn btn-block blue" href="#">
+                                            Facebook <i class="fa fa-facebook"></i>
+                                        </a> -->
+                    <button class="btn btn-block blue" scope="public_profile,email" type="button"
+                      onclick="checkLoginState();">
+                      Facebook <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <a class="btn btn-block red" href="#">
+                      Google Plus <i class="fa fa-google-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="forget-password">
+                <h4>Forgot your password ?</h4>
+                <p>
+                  no worries, click <a href="#">
+                    here </a> to reset your password.
+                </p>
+              </div>
+            </form>
+            <!-- END LOGIN FORM -->
+          </div>
+          <div class="tab-pane" id="register">
+            <form class="" action="#" method="post">
+              <p>
+                Enter your personal details below:
+              </p>
+              <div class="form-group">
+
+                <div class="input-icon">
+                  <i class="fa fa-envelope"></i>
+                  <input class="form-control placeholder-no-fix" value="" type="email" placeholder="example@mail.com"
+                    name="email" required="">
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="input-icon">
+                  <i class="fa fa-lock"></i>
+                  <input class="form-control placeholder-no-fix" value="" type="password" autocomplete="off"
+                    id="register_password" placeholder="Password" name="password" required="">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-icon">
+                  <i class="fa fa-lock"></i>
+                  <input class="form-control placeholder-no-fix" value="" type="password" autocomplete="off"
+                    id="re_password" placeholder="Re-Enter Password" name="c_password" required="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="reg-lab">
+                  <input type="checkbox" class="placeholder-no-fix" checked="" name="tnc"> I agree to the <a href="#">
+                    Terms of Service </a> and <a href="#">
+                    Privacy Policy </a>
+                </label>
+              </div>
+              <div class="form-actions">
+                <button type="submit" id="register-submit-btn" class="btn blue pull-right">
+                  Sign Up <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+              </div>
+              <div class="login-options">
+                <h4>Or Register with</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <button class="btn btn-block blue" scope="public_profile,email" type="button"
+                      onclick="checkLoginState();">
+                      Facebook <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <a class="btn btn-block red" href="#">
+                      Google Plus <i class="fa fa-google-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+ </body>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.1/select2.min.js"></script>
+ <script src="js/app.js"></script>
+ </body>
+
+ </html>

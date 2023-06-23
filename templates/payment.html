@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAME</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style media="screen">
+      .card-registration .select-input.form-control[readonly]:not([disabled]) {
+          font-size: 1rem;
+          line-height: 2.15;
+          padding-left: .75em;
+          padding-right: .75em;
+      }
+
+      .card-registration .select-arrow {
+        top: 13px;
+      }
+    </style>
+
+</head>
+<body>
+
+
+  <section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <!-- <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.jpg"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                />
+              </div>
+              <div class="col-xl-6"> -->
+                <div class="card-body p-md-5 text-black">
+                    <h3 class="mb-5 text-uppercase">Checkout</h3>
+
+                    <div class="d-md-flex justify-content-start align-items-center mb-1 py-2">
+                        <div class="form-label">
+                            <h6 class="mb-0 me-4">Payment Method:</h6>
+                        </div>
+                        <div class="form-check form-check-inline ml-2 mb-1 me-4">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="agent"
+                            value="Debit Card"
+                        />
+                        <label class="form-check-label" for="agent">Debit</label>
+                        </div>
+
+                        <div class="form-check form-check-inline mb-1 me-4">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="membership"
+                            value="Credit Card"
+                        />
+                        <label class="form-check-label" for="membership">Credit</label>
+                        </div>
+                    </div>
+
+                    <div class="form-outline">
+                        <input type="number" id="card_number" class="form-control form-control-lg" />
+                        <label class="form-label" for="card_number">Card Number</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <input type="text" id="fname" class="form-control form-control-lg" />
+                                <label class="form-label" for="fname">First name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <input type="text" id="lname" class="form-control form-control-lg" />
+                                <label class="form-label" for="lname">Last name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-outline">
+                        <input type="date" id="expiry_date" class="form-control form-control-lg" />
+                        <label class="form-label" for="expiry_date">Expiry Date</label>
+                    </div>
+
+                    <!-- <div class="row">
+                        <div class="col-md-6 mb-4">
+
+                        <select class="select">
+                            <option value="1">State</option>
+                            <option value="2">Option 1</option>
+                            <option value="3">Option 2</option>
+                            <option value="4">Option 3</option>
+                        </select>
+
+                        </div>
+                        <div class="col-md-6 mb-4">
+
+                        <select class="select">
+                            <option value="1">City</option>
+                            <option value="2">Option 1</option>
+                            <option value="3">Option 2</option>
+                            <option value="4">Option 3</option>
+                        </select>
+
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="form-outline mb-4">
+                        <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example8">Street Address</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form3Example9" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example9">State</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form3Example99" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example99">City</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form3Example90" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example90">Zipcode</label>
+                    </div>
+
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form3Example97" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example97">Email ID</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="c_contact_number" class="form-control form-control-lg" />
+                        <label class="form-label" for="c_contact_number">Contact Number</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="c_country_code" class="form-control form-control-lg" />
+                        <label class="form-label" for="c_country_code">Country Code</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="em_contact_number" class="form-control form-control-lg" />
+                        <label class="form-label" for="em_contact_number">Emergency Contact Number</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="em_country_code" class="form-control form-control-lg" />
+                        <label class="form-label" for="em_country_code">Emergency Country Code</label>
+                    </div> -->
+
+                    <div class="d-flex justify-content-end pt-3">
+                        <button id="checkout-btn" type="button" class="btn btn-warning btn-lg ms-2">Checkout</button>
+                    </div>
+
+                </div>
+              <!-- </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    $(document).ready(function(){
+         $('#checkout-btn').click(function(){
+              var payment_method = $("input[type='radio']:checked").val();
+              var card_number = $('#card_number').val();
+              var fname = $('#fname').val();
+              var lname = $('#lname').val();
+              var expiry_date = $('#expiry_date').val();
+              console.log(expiry_date);
+
+              var today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+                today = yyyy + '-' + mm + '-' + dd;
+
+            if(card_number.length > 19 || fname.length > 50 || lname.length > 30 || String(expiry_date) < today){
+                if(String(expiry_date)< today && expiry_date != ''){
+                      alert("Your card is already expired");
+                  }
+                if(card_number.length > 19){
+                    alert("Check your card number");
+                }
+                if(fname.length()>50){
+                    alert("Length of first name is greater than 50 characters");
+                }
+                if(lname.length()>30){
+                    alert("Length of last name is greater than 30 characters");
+                }
+            }else{
+                if(payment_method != '' && card_number != '' && fname != '' &&  expiry_date != '')
+              {
+                   $.ajax({
+                        url:"/payment",
+                        method:"POST",
+                        data: {payment_method:payment_method, card_number:card_number,fname:fname, lname:lname, expiry_date:expiry_date },
+                        success:function(data)
+                        {
+                             if(data == 'No-data')
+                             {
+                                  alert("Invalid Email Or Password!");
+                             }
+                             else
+                             {
+                                  // $('#loginModal').hide();
+                                  // console.log("Login Successful");
+                                  // console.log(data);
+                                  url = data.url
+                                  window.location.replace(url);
+                                  // location.reload();
+                             }
+                        }
+                   });
+              }
+              else
+              {
+
+                    alert("All Fields are required");
+
+              }
+            }
+
+
+
+         });
+    });
+    </script>
+
+
+</body>
+</html>

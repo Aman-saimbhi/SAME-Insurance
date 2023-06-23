@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style media="screen">
+      .card-registration .select-input.form-control[readonly]:not([disabled]) {
+          font-size: 1rem;
+          line-height: 2.15;
+          padding-left: .75em;
+          padding-right: .75em;
+      }
+
+      .card-registration .select-arrow {
+        top: 13px;
+      }
+    </style>
+
+</head>
+<body>
+
+  <section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <!-- <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.jpg"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                />
+              </div>
+              <div class="col-xl-6"> -->
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">Insurance</h3>
+
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="trip_cancellation" value="Trip Cancellation">
+                    <label class="custom-control-label" for="trip_cancellation">Trip Cancellation</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="trip_interruption" value="Trip Interruption">
+                    <label class="custom-control-label" for="trip_interruption">Trip Interruption</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="medical" value="Medical Insurance">
+                    <label class="custom-control-label" for="medical">Medical Insurance</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="baggage" value="Baggage Insurance">
+                    <label class="custom-control-label" for="baggage">Baggage Insurance</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="accidental_death" value="Accidental Death Insurance">
+                    <label class="custom-control-label" for="accidental_death">Accidental Death Insurance</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="all-inclusive" value="All-inclusive Insurance">
+                    <label class="custom-control-label" for="all-inclusive">All-Inclusive Insurance</label>
+                  </div>
+
+                  <div class="d-flex justify-content-end pt-3">
+                    <button id="insurance-btn" type="button" style ="margin-right: 30px;"class="btn btn-warning btn-lg ms-2">Submit</button>
+                    <br>
+                    <a id="payment" href="/payment" class="btn btn-primary link-secondary">Proceed to Payment</a>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $(document).ready(function(){
+         $('#insurance-btn').click(function(){
+            var insurances = new Array();
+              $("input[type='checkbox']:checked").each(function() {
+                insurances.push($(this).val());
+              });
+
+              console.log(insurances);
+
+              if(insurances != [])
+              {
+                   $.ajax({
+                        url:"/insurance_selection",
+                        method:"POST",
+                        data: {insurances:insurances},
+                        traditional: true,
+                        success:function(data)
+                        {
+                             if(data == 'No-data')
+                             {
+                                  alert("Invalid Email Or Password!");
+                             }
+                             else
+                             {
+                                  alert("Insurance Selected");
+                                  // $('#loginModal').hide();
+                                  // console.log("Login Successful");
+                                  // url = data.url
+                                  // window.location.replace(url);
+                                  // console.log(data);
+                                  // location.reload();
+                             }
+                        }
+                   });
+              }
+              else
+              {
+                   alert("Select atleast one insurance");
+              }
+         });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style media="screen">
+      .card-registration .select-input.form-control[readonly]:not([disabled]) {
+          font-size: 1rem;
+          line-height: 2.15;
+          padding-left: .75em;
+          padding-right: .75em;
+      }
+
+      .card-registration .select-arrow {
+        top: 13px;
+      }
+    </style>
+
+</head>
+<body>
+
+  <section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <!-- <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.jpg"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                />
+              </div> -->
+
+              <!-- <div class="col-xl-6">
+                <form action="/passenger" method="POST"> -->
+                  <div class="card-body p-md-5 text-black">
+                    <h3 class="mb-5 text-uppercase">Passenger Details</h3>
+                    <!-- <div class="form-outline mb-4">
+                      <input type="text" id="passenger_type" class="form-control form-control-lg" />
+                      <label class="form-label" for="passenger_type">Passenger Type (1 or 2)</label>
+                    </div> -->
+
+                    <div class="d-md-flex justify-content-start align-items-center mb-1 py-2">
+                      <div class="form-label">
+                        <h6 class="mb-0 me-4">Passenger Type:</h6>
+                      </div>
+                      <div class="form-check form-check-inline ml-2 mb-1 me-4">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="you"
+                          value="C"
+                        />
+                        <label class="form-check-label" for="you">You?</label>
+                      </div>
+
+                      <div class="form-check form-check-inline mb-1 me-4">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="someone"
+                          value="P"
+                        />
+                        <label class="form-check-label" for="someone">Someone Else</label>
+                      </div>
+
+                    </div>
+                    <!-- <div class="row">
+                      <div class="col-md-6 mb-4"> -->
+                        <div class="form-outline">
+                          <input type="text" id="fname" class="form-control form-control-lg" />
+                          <label class="form-label" for="fname">First name</label>
+                        </div>
+                      <!-- </div> -->
+                      <!-- <div class="col-md-6 mb-4"> -->
+                        <div class="form-outline">
+                          <input type="text" id="lname" class="form-control form-control-lg" />
+                          <label class="form-label" for="lname">Last name</label>
+                        </div>
+                      <!-- </div> -->
+                    <!-- </div> -->
+                    <div class="form-outline">
+                      <input type="text" id="gender" class="form-control form-control-lg" />
+                      <label class="form-label" for="gender">Gender (M/F/O)</label>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-1">
+                        <div class="form-outline">
+                          <input type="text" id="nationality" class="form-control form-control-lg" />
+                          <label class="form-label" for="nationality">Nationality</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <div class="form-outline">
+                          <input type="date" id="dob" class="form-control form-control-lg" />
+                          <label class="form-label" for="dob">DOB</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-1">
+                        <div class="form-outline">
+                          <input type="text" id="passport_no" class="form-control form-control-lg" />
+                          <label class="form-label" for="passport_no">Passport Number</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <div class="form-outline">
+                          <input type="date" id="expiry_date" class="form-control form-control-lg" />
+                          <label class="form-label" for="expiry_date">Expiry Date</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <select class="form-control" id="cabin_class" required>
+                            <option class="cabin_class" value="" disabled selected></option>
+                            <option class="cabin_class" value="Economy Class">Economy Class</option>
+                            <option class="cabin_class" value="Economy Plus Class">Economy Plus Class</option>
+                            <option class="cabin_class" value="Business Class">Business Class</option>
+                            <option class="cabin_class" value="First Class">First Class</option>
+                          </select>
+                          <span class="select-arrow"></span>
+                          <span class="form-label">Cabin class</span>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <select class="form-control" id="meal_plan">
+                            <option class="meal_plan" value="" disabled selected></option>
+                            <option class="meal_plan" value="Indian Vegetarian Meal">Indian Vegetarian Meal</option>
+                            <option class="meal_plan" value="Non-vegetarian Hindu Meal">Non-vegetarian Hindu Meal</option>
+                            <option class="meal_plan" value="Vegetarian Jain Meal">Vegetarian Jain Meal</option>
+                            <option class="meal_plan" value="Kosher Meal">Kosher Meal</option>
+                            <option class="meal_plan" value="Bland Meal">Bland Meal</option>
+                            <option class="meal_plan" value="Diabetic Meal">Diabetic Meal</option>
+                            <option class="meal_plan" class="meal_plan" value="Gluten-Friendly Mea">Gluten-Friendly Meal</option>
+                            <option class="meal_plan" value="Low-Fat Meal">Low-Fat Meal</option>
+                            <option class="meal_plan" value="Low-Salt Meal">Low-Salt Meal</option>
+                            <option class="meal_plan" value="Vegan Meal">Vegan Meal</option>
+                            <option class="meal_plan" value="Child Meal">Child Meal</option>
+                            <option class="meal_plan" value="Baby Meal">Baby Meal</option>
+                          </select>
+                          <span class="select-arrow"></span>
+                          <span class="form-label">Meal Plan</span>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <select class="form-control" id="special_request">
+                            <option value="" disabled selected></option>
+                            <option class="special_request" value="Disability and Mobility Assistance">Disability and Mobility Assistance</option>
+                            <option class="special_request" value="Travelling with infants">Travelling with infants</option>
+                            <option class="special_request" value="Travelling with animals">Travelling with animals</option>
+                            <option class="special_request" value="Elderly Passenger">Elderly Passenger</option>
+                            <option class="special_request" value="Medical Assistance">Medical Assistance</option>
+                          </select>
+                          <span class="select-arrow"></span>
+                          <span class="form-label">Special Request</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-end pt-3">
+                      <button id="add_pass" type="button" class="btn btn-warning btn-lg mr-3" value="new_pass">Add Passenger</button>
+                      <button id="next" type="button" class="btn btn-success btn-lg ms-2">Next</button>
+                    </div>
+                  </div>
+              <!-- </form> -->
+
+            <!-- </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $('#add_pass').click(function(){
+        var passenger_type = $("input[type='radio']:checked").val();
+        var fname = $('#fname').val();
+        var lname = $('#lname').val();
+        var gender = $('#gender').val();
+        var nationality = $('#nationality').val();
+        var dob = $('#dob').val();
+        var passport_no = $('#passport_no').val();
+        var expiry_date = $('#expiry_date').val();
+        var cabin_class = $('#cabin_class').val();
+        var meal_plan = $('#meal_plan').val();
+        var special_request = $('#special_request').val();
+        var add_pass = 'True';
+        console.log(passenger_type);
+
+
+        if(
+          passenger_type != '' &&
+          fname != '' &&
+          lname != '' &&
+          gender != '' &&
+          nationality != '' &&
+          dob != '' &&
+          passport_no != '' &&
+          expiry_date != '' &&
+          cabin_class != '' &&
+          meal_plan != '' &&
+          special_request != ''
+          )
+        {
+              $.ajax({
+                  url:"/passenger_details",
+                  method:"POST",
+                  data: {
+                    passenger_type:passenger_type,
+                    fname:fname,
+                    lname: lname,
+                    gender: gender,
+                    nationality: nationality,
+                    dob: dob,
+                    passport_no: passport_no,
+                    expiry_date: expiry_date,
+                    cabin_class: cabin_class,
+                    meal_plan: meal_plan,
+                    special_request: special_request,
+                    add_pass:add_pass
+                  },
+                  success:function(data)
+                  {
+                        if(data == 'No-data')
+                        {
+                            alert("Invalid Data");
+                        }
+                        else
+                        {
+                            // $('#loginModal').hide();
+                            // console.log("Login Successful");
+                            url = data.url
+                            window.location.replace(url);
+                            // console.log(data);
+                            // location.reload();
+                        }
+                  }
+              });
+        }
+        else
+        {
+              alert("All Fields are required");
+        }
+    });
+
+    $('#next').click(function(){
+        var passenger_type = $("input[type='radio']:checked").val();
+        var fname = $('#fname').val();
+        var lname = $('#lname').val();
+        var gender = $('#gender').val();
+        var nationality = $('#nationality').val();
+        var dob = $('#dob').val();
+        var passport_no = $('#passport_no').val();
+        var expiry_date = $('#expiry_date').val();
+        var cabin_class = $('#cabin_class').val();
+        var meal_plan = $('#meal_plan').val();
+        var special_request = $('#special_request').val();
+        var add_pass = 'False';
+        console.log(passenger_type);
+
+
+        if(
+          passenger_type != '' &&
+          fname != '' &&
+          lname != '' &&
+          gender != '' &&
+          nationality != '' &&
+          dob != '' &&
+          passport_no != '' &&
+          expiry_date != '' &&
+          cabin_class != '' &&
+          meal_plan != '' &&
+          special_request != ''
+          )
+        {
+              $.ajax({
+                  url:"/passenger_details",
+                  method:"POST",
+                  data: {
+                    passenger_type:passenger_type,
+                    fname:fname,
+                    lname: lname,
+                    gender: gender,
+                    nationality: nationality,
+                    dob: dob,
+                    passport_no: passport_no,
+                    expiry_date: expiry_date,
+                    cabin_class: cabin_class,
+                    meal_plan: meal_plan,
+                    special_request: special_request,
+                    add_pass:add_pass
+                  },
+                  success:function(data)
+                  {
+                        if(data == 'No-data')
+                        {
+                            alert("Invalid Data");
+                        }
+                        else
+                        {
+
+                            // $(this).html(data);
+                            url = data.url
+                            window.location.replace(url);
+                            // $('#loginModal').hide();
+                            // console.log("Login Successful");
+                            // console.log(data);
+                            // location.reload();
+                        }
+                  }
+              });
+        }
+        else
+        {
+              alert("All Fields are required");
+        }
+    });
+  </script>
+</body>
+</html>

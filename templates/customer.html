@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style media="screen">
+      .card-registration .select-input.form-control[readonly]:not([disabled]) {
+          font-size: 1rem;
+          line-height: 2.15;
+          padding-left: .75em;
+          padding-right: .75em;
+      }
+
+      .card-registration .select-arrow {
+        top: 13px;
+      }
+    </style>
+
+</head>
+<body>
+
+  <section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration">
+            <!-- <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.jpg"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                />
+              </div>
+              <div class="col-xl-6"> -->
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">Be a SAME Customer</h3>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <div class="form-outline">
+                        <input type="text" id="fname" class="form-control form-control-lg" />
+                        <label class="form-label" for="fname">First name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-outline">
+                        <input type="text" id="lname" class="form-control form-control-lg" />
+                        <label class="form-label" for="lname">Last name</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <div class="form-outline">
+                        <input type="text" id="em_fname" class="form-control form-control-lg" />
+                        <label class="form-label" for="em_fname">Emergeny Contact First Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <div class="form-outline">
+                        <input type="text" id="em_lname" class="form-control form-control-lg" />
+                        <label class="form-label" for="em_lname">Emergency Contact Last Name</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-md-flex justify-content-start align-items-center mb-1 py-2">
+                    <div class="form-label">
+                      <h6 class="mb-0 me-4">Customer Type:  </h6>
+                    </div>
+                    <div class="form-check form-check-inline ml-2 mb-1 me-4">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="agent"
+                        value="A"
+                      />
+                      <label class="form-check-label" for="agent">Agent</label>
+                    </div>
+
+                    <div class="form-check form-check-inline mb-1 me-4">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="membership"
+                        value="M"
+                      />
+                      <label class="form-check-label" for="membership">Membership</label>
+                    </div>
+
+                    <div class="form-check form-check-inline mb-1">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="self"
+                        value="C"
+                      />
+                      <label class="form-check-label" for="self">Self</label>
+                    </div>
+
+                  </div>
+
+                  <!-- <div class="row">
+                    <div class="col-md-6 mb-4">
+
+                      <select class="select">
+                        <option value="1">State</option>
+                        <option value="2">Option 1</option>
+                        <option value="3">Option 2</option>
+                        <option value="4">Option 3</option>
+                      </select>
+
+                    </div>
+                    <div class="col-md-6 mb-4">
+
+                      <select class="select">
+                        <option value="1">City</option>
+                        <option value="2">Option 1</option>
+                        <option value="3">Option 2</option>
+                        <option value="4">Option 3</option>
+                      </select>
+
+                    </div>
+                  </div> -->
+
+                  <div class="form-outline mb-1">
+                    <input type="text" id="street" class="form-control form-control-lg" />
+                    <label class="form-label" for="street">Street Address</label>
+                  </div>
+
+                  <div class="form-outline mb-1">
+                    <input type="text" id="state" class="form-control form-control-lg" />
+                    <label class="form-label" for="state">State</label>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <div class="form-outline mb-1">
+                        <input type="text" id="city" class="form-control form-control-lg" />
+                        <label class="form-label" for="city">City</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                    <div class="form-outline mb-1">
+                      <input type="text" id="zipcode" class="form-control form-control-lg" />
+                      <label class="form-label" for="zipcode">Zipcode</label>
+                    </div>
+                  </div>
+                </div>
+
+                  <div class="form-outline mb-1">
+                    <input type="text" id="email" class="form-control form-control-lg" />
+                    <label class="form-label" for="email">Email ID</label>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-4 mb-1">
+                      <div class="form-outline mb-1">
+                        <input type="number" id="c_country_code" class="form-control form-control-lg" />
+                        <label class="form-label" for="c_country_code">Country Code</label>
+                      </div>
+                    </div>
+                    <div class="col-md-8 mb-1">
+                      <div class="form-outline mb-1">
+                        <input type="number" id="c_contact_number" class="form-control form-control-lg" />
+                        <label class="form-label" for="c_contact_number">Contact Number</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-4 mb-1">
+                      <div class="form-outline mb-1">
+                        <input type="number" id="em_country_code" class="form-control form-control-lg" />
+                        <label class="form-label" for="em_country_code">Emergency Country Code</label>
+                      </div>
+                    </div>
+                    <div class="col-md-8 mb-5">
+                      <div class="form-outline mb-1">
+                        <input type="number" id="em_contact_number" class="form-control form-control-lg" />
+                        <label class="form-label" for="em_contact_number">Emergency Contact Number</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <div class="form-outline mb-1">
+                    <h3 class="mb-4 text-uppercase">Insurances</h3>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="trip_cancellation" value="Trip Cancellation">
+                    <label class="custom-control-label" for="trip_cancellation">Trip Cancellation</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="trip_interruption" value="Trip Interruption">
+                    <label class="custom-control-label" for="trip_interruption">Trip Interruption</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="medical" value="Medical Insurance">
+                    <label class="custom-control-label" for="medical">Medical Insurance</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="baggage" value="Baggage Insurance">
+                    <label class="custom-control-label" for="baggage">Baggage Insurance</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="accidental_death" value="Accidental Death Insurance">
+                    <label class="custom-control-label" for="accidental_death">Accidental Death Insurance</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="insurances[]" class="custom-control-input" id="all-inclusive" value="All-inclusive Insurance">
+                    <label class="custom-control-label" for="all-inclusive">All-Inclusive Insurance</label>
+                  </div> -->
+
+                  <div class="d-flex justify-content-end pt-3">
+                    <button id="customer-submit" type="button" class="btn btn-warning btn-lg ms-2">Next</button>
+                  </div>
+
+                <!-- </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // $('.your-checkbox').prop('indeterminate', true);
+    $(document).ready(function(){
+         $('#customer-submit').click(function(){
+              var fname = $('#fname').val();
+              var lname = $('#lname').val();
+              var em_fname = $('#em_fname').val();
+              var em_lname = $('#em_lname').val();
+              var customer_type = $("input[type='radio']:checked").val();
+              var street = $('#street').val();
+              var city = $('#city').val();
+              var zipcode = $('#zipcode').val();
+              var email = $('#email').val();
+              var c_country_code = $('#c_country_code').val();
+              var c_contact_number = $('#c_contact_number').val();
+              console.log(customer_type);
+
+              // var insurances = new Array();
+              // $("input[type='checkbox']:checked").each(function() {
+              //   insurances.push($(this).val());
+              // });
+              // var  = $('#').val();
+              // var  = $('#').val();
+              // var  = $('#').val();
+              // var  = $('#').val();
+              // var email = $('#email').val();
+
+              console.log(fname);
+              // console.log(agent);
+              // console.log(membership);
+              // console.log(customer_type);
+              // console.log(insurances);
+
+              // console.log(password);
+              // console.log(email);
+
+              if(
+                fname != '' &&
+                lname != '' &&
+                em_fname != '' &&
+                em_lname != '' &&
+                customer_type != '' &&
+                street != '' &&
+                city != '' &&
+                zipcode != '' &&
+                email != '' &&
+                c_country_code != '' &&
+                c_contact_number != ''
+                // insurances != []
+              )
+              {
+                   $.ajax({
+                        url:"/customer_details",
+                        method:"POST",
+                        data: {fname:fname, lname:lname, em_fname:em_fname, em_lname:em_lname, customer_type:customer_type, street:street, city:city, zipcode:zipcode, email:email, c_country_code:c_country_code},
+                        success:function(data)
+                        {
+                             if(data == 'No-data')
+                             {
+                                  alert("Invalid Email Or Password!");
+                             }
+                             else
+                             {
+                                  // $('#loginModal').hide();
+                                  // console.log("Login Successful");
+                                  url = data.url
+                                  window.location.replace(url);
+                                  // console.log(data);
+                                  // location.reload();
+                             }
+                        }
+                   });
+              }
+              else
+              {
+                   alert("All Fields are required");
+              }
+         });
+    });
+    </script>
+
+</body>
+</html>
